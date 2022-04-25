@@ -17,7 +17,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const pages = [
-  ['產品一覽', '/products'],
+  ['產品一覽', '/product'],
   ['費用估算', '/pricing'],
   ['常見問答', '/support'],
   ['關於我們', '/about'],
@@ -85,7 +85,7 @@ export const Nav = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map(([page, url]) => (
-              <Link key={page} to={url} sx={{ textDecoration: 'none' }}>
+              <Link key={page} to={url}>
                 <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: '#202327', display: 'block' }}>
                   {page}
                 </Button>
@@ -93,7 +93,7 @@ export const Nav = () => {
             ))}
           </Box>
 
-          <Link to="/cart" style={{ color: 'inherit', textDecoration: 'none' }}>
+          <Link to="/cart">
             <Button sx={{ my: 2, color: '#202327', flexGrow: 0, display: 'flex', alignItems: 'center' }}>
               <ShoppingCartIcon></ShoppingCartIcon>
               <Typography>購物車</Typography>

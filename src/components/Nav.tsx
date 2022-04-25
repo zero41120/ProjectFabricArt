@@ -1,26 +1,12 @@
-import {
-  AppBar,
-  Avatar,
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Menu,
-  MenuItem,
-  Toolbar,
-  Tooltip,
-  Typography,
-} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const pages = [
   ['產品一覽', '/product'],
-  ['費用估算', '/pricing'],
   ['常見問答', '/support'],
-  ['關於我們', '/about'],
 ];
 
 export const Nav = () => {
@@ -38,11 +24,13 @@ export const Nav = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
-            LOGO
-          </Typography>
+          <Link to="/">
+            <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', sm: 'flex' } }}>
+              LOGO
+            </Typography>
+          </Link>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -68,7 +56,7 @@ export const Nav = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', sm: 'none' },
               }}
             >
               {pages.map(([page, url]) => (
@@ -80,10 +68,14 @@ export const Nav = () => {
               ))}
             </Menu>
           </Box>
-          <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+
+          <Link to="/">
+            <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
+              LOGO
+            </Typography>
+          </Link>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
             {pages.map(([page, url]) => (
               <Link key={page} to={url}>
                 <Button onClick={handleCloseNavMenu} sx={{ my: 2, color: '#202327', display: 'block' }}>

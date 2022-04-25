@@ -15,6 +15,12 @@ function App() {
   const theme = createTheme({
     palette: {
       mode: 'light',
+      primary: {
+        main: '#0577d6',
+      },
+      secondary: {
+        main: '#df910c',
+      },
     },
     components: {
       MuiAppBar: {

@@ -26,8 +26,26 @@ export const Cart = () => {
   const handleCheckout = () => {
     Swal.fire('金流系統尚為完成', `請截圖並聯絡客服E-Mail: ${Contact.email} 或電話: ${Contact.phone}`, 'info');
   };
+
+  const handleReset = async () => {
+    const result = await Swal.fire({
+      title: '確定要清空購物車嗎?',
+      icon: 'warning',
+      showCancelButton: true,
+      cancelButtonText: '取消',
+      confirmButtonText: '清空',
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+    });
+    if (result.value) {
+      localStorage.removeItem('shoppingCart');
+      window.location.reload();
+    }
+  };
+
   return (
     <Stack spacing={1} padding={2}>
+      {state.length === 0 && <Typography variant="h3">購物車內無物品</Typography>}
       {state.map((product, index) => (
         <Card key={index}>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -57,6 +75,10 @@ export const Cart = () => {
       <Typography variant="h5">總計: {totalSum} 元</Typography>
       <Button size="large" variant="contained" onClick={handleCheckout}>
         結帳
+      </Button>
+
+      <Button size="small" variant="outlined" color="error" onClick={handleReset}>
+        清空購物車
       </Button>
     </Stack>
   );

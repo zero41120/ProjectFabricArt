@@ -10,6 +10,16 @@ function App() {
     palette: {
       mode: 'light',
     },
+    components: {
+      MuiAppBar: {
+        styleOverrides: {
+          colorPrimary: {
+            color: '#202327',
+            backgroundColor: '#fafafa',
+          },
+        },
+      },
+    },
     typography: {
       fontFamily: 'Noto Sans TC',
     },

@@ -1,6 +1,9 @@
 import { createTheme, ThemeProvider } from '@mui/material';
 import Typography from '@mui/material/Typography';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Home } from './components/Home';
+import { Nav } from './components/Nav';
 
 function App() {
   const theme = createTheme({
@@ -14,9 +17,10 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Typography variant="h1" color="initial">
-        起飛
-      </Typography>
+      <Nav></Nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
     </ThemeProvider>
   );
 }

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
+    "build-nginx": "tsc && vite --config ./nginx-vite.config.js build",
     "preview": "vite preview",
     "deploy": "bash ./deploy.sh"
   },

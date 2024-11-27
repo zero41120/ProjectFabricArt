@@ -10,6 +10,7 @@ import { NotFound } from './components/NotFound';
 import { Pricing } from './components/Pricing';
 import { Product } from './components/Product';
 import { Support } from './components/Support';
+import { PrivacyPolicy } from './components/PrivacyPolicy';
 
 function App() {
   const theme = createTheme({
@@ -45,6 +46,7 @@ function App() {
         <Route path="/product" element={<Product />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/support" element={<Support />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />

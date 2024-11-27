@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const pages = [
   ['產品一覽', '/product'],
   ['常見問答', '/support'],
+  ['隱私權政策', '/privacy'],
   ['聯絡我們', '/about'],
 ];
 
